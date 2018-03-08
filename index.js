@@ -15,7 +15,17 @@ let planted = false,
     roundOver = false;
 
 function createCfg(path) {
-  true;
+  let url = "https://github.com/Delivator/csgo-gsi-bomb-timer/raw/master/gamestate_integration_bombtimer.cfg";
+  https.get(url, (res) => {
+    res.on("data", (d) => {
+      fs.writeFile(path, d, (err) => {
+        if (err) throw err;
+        console.log(chalk.green("Successfully created ") + chalk.gray(path));
+      });
+    });
+  }).on("error", (e) => {
+    console.error(e);
+  });
 }
 
 function checkForCfg() {
@@ -26,9 +36,9 @@ function checkForCfg() {
     if (fs.existsSync(path_)) {
       path_ = path_ + "\\gamestate_integration_bombtimer.cfg"
       if (fs.existsSync(path_)) {
-        console.log("Found a gsi-cfg at: " + chalk.green(path_));
+        console.log(chalk.green("Found a gsi-cfg at: ") + chalk.gray(path_));
       } else {
-        console.log("No gsi-cfg found, creating one at: " + chalk.green(path_));
+        console.log(chalk.red("No gsi-cfg found, creating one at: ") + chalk.gray(path_));
         createCfg(path_);
       }
     }
