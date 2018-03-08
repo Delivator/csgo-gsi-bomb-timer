@@ -1,0 +1,27 @@
+{
+  "name": "csgo-gsi-bomb-timer",
+  "version": "1.0.0",
+  "description": "CS:GO Bomb Timer made using the CS:GO Game State Integration",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Delivator/csgo-gsi-bomb-timer.git"
+  },
+  "keywords": [
+    "csgo",
+    "gsi",
+    "timer"
+  ],
+  "author": "Delivator",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Delivator/csgo-gsi-bomb-timer/issues"
+  },
+  "homepage": "https://github.com/Delivator/csgo-gsi-bomb-timer#readme",
+  "dependencies": {
+    "chalk": "^2.3.2"
+  }
+}
