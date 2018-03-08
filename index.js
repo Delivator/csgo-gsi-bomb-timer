@@ -15,7 +15,7 @@ let planted = false,
     roundOver = false;
 
 function createCfg(path) {
-  let url = "https://github.com/Delivator/csgo-gsi-bomb-timer/raw/master/gamestate_integration_bombtimer.cfg";
+  let url = "https://cdn.rawgit.com/Delivator/csgo-gsi-bomb-timer/48fed30a/gamestate_integration_bombtimer.cfg";
   https.get(url, (res) => {
     res.on("data", (d) => {
       fs.writeFile(path, d, (err) => {
