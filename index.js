@@ -20,7 +20,7 @@ function createCfg(path) {
     res.on("data", (d) => {
       fs.writeFile(path, d, (err) => {
         if (err) throw err;
-        console.log(chalk.green("Successfully created ") + chalk.gray(path));
+        console.log(chalk.green("Successfully created ") + path);
       });
     });
   }).on("error", (e) => {
@@ -36,9 +36,9 @@ function checkForCfg() {
     if (fs.existsSync(path_)) {
       path_ = path_ + "\\gamestate_integration_bombtimer.cfg"
       if (fs.existsSync(path_)) {
-        console.log(chalk.green("Found a gsi-cfg at: ") + chalk.gray(path_));
+        console.log(chalk.green("Found a gsi-cfg at: ") + path_);
       } else {
-        console.log(chalk.red("No gsi-cfg found, creating one at: ") + chalk.gray(path_));
+        console.log(chalk.red("No gsi-cfg found, creating one at: ") + path_);
         createCfg(path_);
       }
     }
